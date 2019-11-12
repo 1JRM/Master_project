@@ -23,6 +23,8 @@ ggplot(yld.gc.gd.vol, aes(e.time, mean, colour = substrate)) +
   geom_line() +
   geom_point() +
   facet_wrap(~ method)
+ggsave('../plots/BMP_line_vol.png')
+
 
 # For grav plots
 
@@ -37,3 +39,4 @@ ggplot(yld.gc.gd.grav, aes(e.time, mean, colour = substrate)) +
   geom_line() +
   geom_point() +
   facet_wrap(~ method)
+ggsave('../plots/BMP_line_grav.png')
