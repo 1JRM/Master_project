@@ -68,7 +68,7 @@ biogas.vol <- as.data.frame(biogas.vol)
 BMP.gd.vol <- summBg(biogas.vol, setup, id.name = "id", vol.name = 'cvCH4.gd',
               time.name = 'e.time', descrip.name = 'substrate',
               inoc.name = "Inoculum", inoc.m.name = "m.ino", norm.name = "m.sub.vs",
-              when = 'end', when.min = 12, extrap = TRUE, set.name = 'method')
+              when = 'end', when.min = 25, extrap = TRUE, set.name = 'method')
 
 BMP.gd.vol$rsd <- 100 * BMP.gd.vol$sd/BMP.gd.vol$mean
 
@@ -89,7 +89,7 @@ yld.gd.vol$method <- 'gd'
 BMP.gc.vol <- summBg(biogas.vol, setup, id.name = "id", vol.name = 'cvCH4.gc',
                  time.name = 'e.time', descrip.name = 'substrate',
                  inoc.name = "Inoculum", inoc.m.name = "m.ino", norm.name = "m.sub.vs",
-                 when = 'end', when.min = 12, extrap = TRUE, set.name = 'method')
+                 when = 'end', when.min = 25, extrap = TRUE, set.name = 'method')
 
 BMP.gc.vol$rsd <- 100 * BMP.gc.vol$sd/BMP.gc.vol$mean
 
@@ -146,7 +146,7 @@ biogas.gc.grav$method <- 'gc'
 BMP.gd.grav <- summBg(biogas.gd.grav, setup, id.name = "id", vol.name = 'cvCH4',
                      time.name = 'e.time', descrip.name = 'substrate',
                      inoc.name = "Inoculum", inoc.m.name = "m.ino", norm.name = "m.sub.vs",
-                     when = 'end', when.min = 12, extrap = TRUE, set.name = 'method')
+                     when = 'end', when.min = 25, extrap = TRUE, set.name = 'method')
 
 BMP.gd.grav$rsd <- 100 * BMP.gd.grav$sd/BMP.gd.grav$mean
 
@@ -170,7 +170,7 @@ yld.gd.grav$method <- 'gd'
 BMP.gc.grav <- summBg(biogas.gc.grav, setup, id.name = "id", vol.name = 'cvCH4',
                      time.name = 'e.time', descrip.name = 'substrate',
                      inoc.name = "Inoculum", inoc.m.name = "m.ino", norm.name = "m.sub.vs",
-                     when = 'end', when.min = 12, extrap = TRUE, set.name = 'method')
+                     when = 'end', when.min = 25, extrap = TRUE, set.name = 'method')
 
 BMP.gc.grav$rsd <- 100 * BMP.gc.grav$sd/BMP.gc.grav$mean
 
@@ -195,5 +195,3 @@ yld.gc.gd.grav <- rbind(yld.gc.grav, yld.gd.grav)
 
 BMP.gc.gd.grav <- BMP.gc.gd.grav[!BMP.gc.gd.grav$substrate %in% 'Litterbag and inoculum', ]
 yld.gc.gd.grav <- yld.gc.gd.grav[!yld.gc.gd.grav$substrate %in% 'Litterbag and inoculum', ]
-
-

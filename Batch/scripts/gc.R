@@ -59,13 +59,13 @@ biogas.vol <- rename(biogas.vol,
 biogas.vol$xCH4_gd <- round(biogas.vol$xCH4_gd, digits = 2)
 biogas.vol$xCH4_gc <- round(biogas.vol$xCH4_gc, digits = 2)
 
-# Comparing for time > 8 days
+# Comparing for time > 25 days
 unique(biogas.vol$id)
-xCH4_d9 <- biogas.vol[biogas.vol$e.time > 25
+xCH4_d30 <- biogas.vol[biogas.vol$e.time %in% 30
                   & biogas.vol$id %in% c("Cell 01", "D3 01",
                                          "D7 01", "D14 01", "D30 01", "D30 12 01",
                                          "D30 24 01", "Ino 01", "Nylon"),
                                           c("id", "xCH4_gc", "xCH4_gd")] 
 
-xCH4_d9$perc_diff <- ((xCH4_d9$xCH4_gc - xCH4_d9$xCH4_gd ) / ((xCH4_d9$xCH4_gd + xCH4_d9$xCH4_gc)/2)) * 100
-xCH4_d9$perc_diff <- round(xCH4_d9$perc_diff, digits = 2)
+xCH4_d30$perc_diff <- (xCH4_d30$xCH4_gc - xCH4_d30$xCH4_gd ) / ((xCH4_d30$xCH4_gd)) * 100
+xCH4_d30$perc_diff <- round(xCH4_d30$perc_diff, digits = 2)
