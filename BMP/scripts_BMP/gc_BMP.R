@@ -61,7 +61,7 @@ biogas.vol$xCH4_gc <- round(biogas.vol$xCH4_gc, digits = 2)
 
 # Comparing for time > 20 days
 unique(biogas.vol$id)
-xCH4_d9 <- biogas.vol[biogas.vol$e.time > 28
+xCH4_d9 <- biogas.vol[biogas.vol$e.time > 50
                   & biogas.vol$id %in% c("CGP 01", "HHW 01",
                                          "CM 01", "FG 01", "Ino 01", "Cell 01"),
                                           c("id", "xCH4_gc", "xCH4_gd")] 

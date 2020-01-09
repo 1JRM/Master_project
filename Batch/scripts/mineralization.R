@@ -104,6 +104,7 @@ ggplot(data = dat4.n, aes(x = time, y = mean.mass.n, colour = method)) +
   geom_line() +
   theme(legend.position = c(0.9, 0.9)) +
   scale_color_manual(values=c('red','dodgerblue', 'black')) +
+  scale_y_continuous(breaks = c(0, 10, 20, 40, 60, 80), limits = c(0,80)) +
   labs(x = "Time (d)", y = "Total organic N (mg)", colour = "Model")
 ggsave('../plots/totalnmineral.png')
 
@@ -146,7 +147,7 @@ ggplot(data = dat4.s, aes(x = time, y = mean.mass.s, colour = method)) +
   theme(legend.position = c(0.9, 0.9)) +
   geom_line() +
   scale_color_manual(values=c('red','dodgerblue', 'black')) +
-  labs(x = "time (d)", y = "Total organic S (mg)", colour = "Model")
+  labs(x = "Time (d)", y = "Total organic S (mg)", colour = "Model")
 ggsave('../plots/totalsmineral.png')
 
 
@@ -161,7 +162,8 @@ ggplot(data = percTNS, aes(x = time, y = tot.mass)) +
   geom_point() +
   theme(legend.position = c(0.9, 0.9)) +
   geom_line() +
-  labs(x = "time (d)", y = "Mass (%)")
+  scale_y_continuous(breaks = c(0, 20, 30, 40, 50, 75 ,100), limits = c(0,100)) +
+  labs(x = "Time (d)", y = "Normalized mass (%)")
 ggsave('../plots/perc_totalmineral_batch.png')
 
 # Total N
@@ -170,7 +172,8 @@ ggplot(data = percTNS, aes(x = time, y = tot.n)) +
   geom_point() +
   theme(legend.position = c(0.9, 0.9)) +
   geom_line() +
-  labs(x = "time (d)", y = "Total organic N (%)")
+  scale_y_continuous(breaks = c(0, 10, 20, 50, 75 ,100), limits = c(0,100)) +
+  labs(x = "Time (d)", y = "Normalized total organic N (%)")
 ggsave('../plots/perc_Nmineral_batch.png')
 
 # Total S
@@ -179,7 +182,7 @@ ggplot(data = percTNS, aes(x = time, y = tot.s)) +
   geom_point() +
   theme(legend.position = c(0.9, 0.9)) +
   geom_line() +
-  labs(x = "time (d)", y = "Total organic S (%)")
+  labs(x = "Time (d)", y = "Normalized total organic S (%)")
 ggsave('../plots/perc_Smineral_batch.png')
 
 

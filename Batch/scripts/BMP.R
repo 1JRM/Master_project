@@ -114,8 +114,8 @@ yld.gc.gd.vol <- rbind(yld.gc.vol, yld.gd.vol)
 
 # Remove litterbag only experiment
 
-BMP.gc.gd.vol <- BMP.gc.gd.vol[!BMP.gc.gd.vol$substrate %in% 'Litterbag and inoculum', ]
-yld.gc.gd.vol <- yld.gc.gd.vol[!yld.gc.gd.vol$substrate %in% 'Litterbag and inoculum', ]
+#BMP.gc.gd.vol <- BMP.gc.gd.vol[!BMP.gc.gd.vol$substrate %in% 'Litterbag and inoculum', ]
+#yld.gc.gd.vol <- yld.gc.gd.vol[!yld.gc.gd.vol$substrate %in% 'Litterbag and inoculum', ]
 
 # Make grav calculations
 options(unit.pres = 'hPa')
@@ -193,5 +193,5 @@ yld.gc.grav$method <- 'gc'
 BMP.gc.gd.grav <- rbind(BMP.gc.grav, BMP.gd.grav)
 yld.gc.gd.grav <- rbind(yld.gc.grav, yld.gd.grav)
 
-BMP.gc.gd.grav <- BMP.gc.gd.grav[!BMP.gc.gd.grav$substrate %in% 'Litterbag and inoculum', ]
-yld.gc.gd.grav <- yld.gc.gd.grav[!yld.gc.gd.grav$substrate %in% 'Litterbag and inoculum', ]
+#BMP.gc.gd.grav <- BMP.gc.gd.grav[!BMP.gc.gd.grav$substrate %in% 'Litterbag and inoculum', ]
+#yld.gc.gd.grav <- yld.gc.gd.grav[!yld.gc.gd.grav$substrate %in% 'Litterbag and inoculum', ]

@@ -44,6 +44,10 @@ source("BMP.R")
 
 source("plots.R")
 
+# Gompertz
+
+source("gompertz.R")
+
 # Output tables etc.
 
 source("output.R")
